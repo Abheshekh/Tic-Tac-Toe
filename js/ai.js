@@ -99,30 +99,13 @@ function bestMove()
 
   else{
     if(cellElements[center].classList.contains(p1) && emptyCornors.length >0){
-      f=1
-      while(f){
-        var min=0; 
-        var max=emptyCornors.length;  
-        var random = Math.floor(Math.random() * (+max - +min)) + +min;
-        if(emptyCornors.length >0){
-        if(!cellElements[emptyCornors[random]].classList.contains(X_CLASS) && 
-        !cellElements[emptyCornors[random]].classList.contains(CIRCLE_CLASS)){
-          return emptyCornors[random]
-        }
-      }
-      }
+      let randomIndex = Math.floor(Math.random() * emptyCornors.length);
+      return emptyCornors[randomIndex]
     }
     else{
-      f=1
-      while(f){
-        var min=0; 
-        var max=emptyTiles.length;  
-        var random = Math.floor(Math.random() * (+max - +min)) + +min; 
-        if(!cellElements[emptyEdges[random]].classList.contains(X_CLASS) && 
-        !cellElements[emptyEdges[random]].classList.contains(CIRCLE_CLASS)){
-          return emptyEdges[random]
-        }
-      }
+
+      let randomIndex = Math.floor(Math.random() * emptyEdges.length);
+      return emptyEdges[randomIndex]
     }
   }
 }
